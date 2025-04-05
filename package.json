@@ -1,0 +1,35 @@
+{
+  "name": "fullstack-web3-app",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "smart-contracts"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run start:dev",
+    "build": "npm run build:frontend && npm run build:backend && npm run build:smart-contracts",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "build:smart-contracts": "cd smart-contracts && npm run build",
+    "test": "npm run test:frontend && npm run test:backend && npm run test:smart-contracts",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test",
+    "test:smart-contracts": "cd smart-contracts && npm test",
+    "lint": "npm run lint:frontend && npm run lint:backend && npm run lint:smart-contracts",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:smart-contracts": "cd smart-contracts && npm run lint",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "setup": "powershell -ExecutionPolicy Bypass -File setup-project-all.ps1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "husky": "^8.0.3"
+  }
+}

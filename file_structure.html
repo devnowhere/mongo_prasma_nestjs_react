@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory Structure Viewer</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+        }
+        
+        .tree ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .tree {
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        .caret {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .caret::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 6px;
+            font-size: 10px;
+        }
+        
+        .caret-down::before {
+            content: "▼";
+        }
+        
+        .nested {
+            display: none;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        .file {
+            padding-left: 21px;
+        }
+        
+        .no-children {
+            padding-left: 21px;
+        }
+        
+        .main-directory {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web3 Fullstack App Directory Structure</h1>
+    
+    <div class="tree">
+        <ul>
+            <li><span class="caret">fullstack-web3-app/</span>
+                <ul class="nested">
+                    <li><span class="caret main-directory">frontend/</span>
+                        <ul class="nested">
+                            <li><span class="caret">public/</span>
+                                <ul class="nested">
+                                    <li class="file">favicon.ico</li>
+                                    <li><span class="caret">assets/</span>
+                                        <ul class="nested">
+                                            <li><span class="caret">images/</span>
+                                                <ul class="nested">
+                                                    <li class="file">logo.png</li>
+                                                    <li class="file">hero.jpg</li>
+                                                    <li class="file">placeholder.svg</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><span class="caret">src/</span>
+                                <ul class="nested">
+                                    <li><span class="caret">components/</span>
+                                        <ul class="nested">
+                                            <li><span class="caret">Button/</span>
+                                                <ul class="nested">
+                                                    <li class="file">Button.tsx</li>
+                                                    <li class="file">Button.styles.ts</li>
+                                                    <li class="file">index.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">Card/</span>
+                                                <ul class="nested">
+                                                    <li class="file">Card.tsx</li>
+                                                    <li class="file">Card.styles.ts</li>
+                                                    <li class="file">index.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">ConnectWallet/</span>
+                                                <ul class="nested">
+                                                    <li class="file">ConnectWallet.tsx</li>
+                                                    <li class="file">ConnectWallet.styles.ts</li>
+                                                    <li class="file">ConnectWalletButton.tsx</li>
+                                                    <li class="file">index.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">NFTCard/</span>
+                                                <ul class="nested">
+                                                    <li class="file">NFTCard.tsx</li>
+                                                    <li class="file">NFTCard.styles.ts</li>
+                                                    <li class="file">NFTCardSkeleton.tsx</li>
+                                                    <li class="file">index.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">Navbar/</span>
+                                                <ul class="nested">
+                                                    <li class="file">Navbar.tsx</li>
+                                                    <li class="file">Navbar.styles.ts</li>
+                                                    <li class="file">NavbarLink.tsx</li>
+                                                    <li class="file">MobileMenu.tsx</li>
+                                                    <li class="file">index.ts</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">hooks/</span>
+                                        <ul class="nested">
+                                            <li class="file">useLocalStorage.ts</li>
+                                            <li class="file">useWindowSize.ts</li>
+                                            <li class="file">useWallet.ts</li>
+                                            <li class="file">useContract.ts</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">styles/</span>
+                                        <ul class="nested">
+                                            <li class="file">global.ts</li>
+                                            <li class="file">theme.ts</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">types/</span>
+                                        <ul class="nested">
+                                            <li class="file">index.ts</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">utils/</span>
+                                        <ul class="nested">
+                                            <li class="file">helpers.ts</li>
+                                            <li class="file">ethers.ts</li>
+                                            <li class="file">ipfs.ts</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">context/</span>
+                                        <ul class="nested">
+                                            <li class="file">Web3Context.tsx</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">config/</span>
+                                        <ul class="nested">
+                                            <li class="file">contracts.ts</li>
+                                            <li class="file">networks.ts</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">pages/</span>
+                                        <ul class="nested">
+                                            <li class="file">_app.tsx</li>
+                                            <li class="file">_document.tsx</li>
+                                            <li class="file">index.tsx</li>
+                                            <li class="file">nfts.tsx</li>
+                                            <li class="file">profile.tsx</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="file">next.config.js</li>
+                            <li class="file">package.json</li>
+                            <li class="file">tsconfig.json</li>
+                        </ul>
+                    </li>
+                    <li><span class="caret main-directory">backend/</span>
+                        <ul class="nested">
+                            <li><span class="caret">src/</span>
+                                <ul class="nested">
+                                    <li class="file">main.ts</li>
+                                    <li class="file">app.module.ts</li>
+                                    <li><span class="caret">config/</span>
+                                        <ul class="nested">
+                                            <li class="file">app.config.ts</li>
+                                            <li class="file">blockchain.config.ts</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">blockchain/</span>
+                                        <ul class="nested">
+                                            <li class="file">blockchain.module.ts</li>
+                                            <li class="file">blockchain.service.ts</li>
+                                            <li class="file">blockchain.controller.ts</li>
+                                            <li><span class="caret">dto/</span>
+                                                <ul class="nested">
+                                                    <li class="file">transaction.dto.ts</li>
+                                                    <li class="file">wallet.dto.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">interfaces/</span>
+                                                <ul class="nested">
+                                                    <li class="file">transaction.interface.ts</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">ipfs/</span>
+                                        <ul class="nested">
+                                            <li class="file">ipfs.module.ts</li>
+                                            <li class="file">ipfs.service.ts</li>
+                                            <li class="file">ipfs.controller.ts</li>
+                                            <li><span class="caret">dto/</span>
+                                                <ul class="nested">
+                                                    <li class="file">ipfs.dto.ts</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">users/</span>
+                                        <ul class="nested">
+                                            <li class="file">users.module.ts</li>
+                                            <li class="file">users.service.ts</li>
+                                            <li class="file">users.controller.ts</li>
+                                            <li><span class="caret">entities/</span>
+                                                <ul class="nested">
+                                                    <li class="file">user.entity.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">dto/</span>
+                                                <ul class="nested">
+                                                    <li class="file">user.dto.ts</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">nfts/</span>
+                                        <ul class="nested">
+                                            <li class="file">nfts.module.ts</li>
+                                            <li class="file">nfts.service.ts</li>
+                                            <li class="file">nfts.controller.ts</li>
+                                            <li><span class="caret">entities/</span>
+                                                <ul class="nested">
+                                                    <li class="file">nft.entity.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">dto/</span>
+                                                <ul class="nested">
+                                                    <li class="file">nft.dto.ts</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">common/</span>
+                                        <ul class="nested">
+                                            <li><span class="caret">decorators/</span>
+                                                <ul class="nested">
+                                                    <li class="file">wallet-address.decorator.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">guards/</span>
+                                                <ul class="nested">
+                                                    <li class="file">wallet-auth.guard.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">filters/</span>
+                                                <ul class="nested">
+                                                    <li class="file">blockchain-exception.filter.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">interceptors/</span>
+                                                <ul class="nested">
+                                                    <li class="file">transaction.interceptor.ts</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><span class="caret">test/</span>
+                                <ul class="nested">
+                                    <li class="file">app.e2e-spec.ts</li>
+                                    <li class="file">jest-e2e.json</li>
+                                </ul>
+                            </li>
+                            <li class="file">nest-cli.json</li>
+                            <li class="file">package.json</li>
+                            <li class="file">tsconfig.json</li>
+                        </ul>
+                    </li>
+                    <li><span class="caret main-directory">smart-contracts/</span>
+                        <ul class="nested">
+                            <li><span class="caret">programs/</span>
+                                <ul class="nested">
+                                    <li><span class="caret">nft-marketplace/</span>
+                                        <ul class="nested">
+                                            <li><span class="caret">src/</span>
+                                                <ul class="nested">
+                                                    <li class="file">lib.rs</li>
+                                                    <li><span class="caret">instructions/</span>
+                                                        <ul class="nested">
+                                                            <li class="file">create_nft.rs</li>
+                                                            <li class="file">list_nft.rs</li>
+                                                            <li class="file">buy_nft.rs</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><span class="caret">state/</span>
+                                                        <ul class="nested">
+                                                            <li class="file">marketplace.rs</li>
+                                                            <li class="file">nft.rs</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="file">error.rs</li>
+                                                </ul>
+                                            </li>
+                                            <li class="file">Cargo.toml</li>
+                                            <li class="file">Xargo.toml</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">token/</span>
+                                        <ul class="nested">
+                                            <li><span class="caret">src/</span>
+                                                <ul class="nested">
+                                                    <li class="file">lib.rs</li>
+                                                    <li class="file">mint.rs</li>
+                                                    <li class="file">transfer.rs</li>
+                                                    <li class="file">burn.rs</li>
+                                                </ul>
+                                            </li>
+                                            <li class="file">Cargo.toml</li>
+                                            <li class="file">Xargo.toml</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><span class="caret">app/</span>
+                                <ul class="nested">
+                                    <li><span class="caret">src/</span>
+                                        <ul class="nested">
+                                            <li class="file">index.ts</li>
+                                            <li><span class="caret">generated/</span>
+                                                <ul class="nested">
+                                                    <li class="file">nft-marketplace.ts</li>
+                                                    <li class="file">token.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">services/</span>
+                                                <ul class="nested">
+                                                    <li class="file">marketplace.service.ts</li>
+                                                    <li class="file">token.service.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">utils/</span>
+                                                <ul class="nested">
+                                                    <li class="file">account.ts</li>
+                                                    <li class="file">connection.ts</li>
+                                                    <li class="file">instruction-builder.ts</li>
+                                                    <li class="file">transaction.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">models/</span>
+                                                <ul class="nested">
+                                                    <li class="file">nft.model.ts</li>
+                                                    <li class="file">marketplace.model.ts</li>
+                                                    <li class="file">user.model.ts</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="caret">types/</span>
+                                                <ul class="nested">
+                                                    <li class="file">program.types.ts</li>
+                                                    <li class="file">account.types.ts</li>
+                                                    <li class="file">instruction.types.ts</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">tests/</span>
+                                        <ul class="nested">
+                                            <li class="file">marketplace.test.ts</li>
+                                            <li class="file">token.test.ts</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="caret">examples/</span>
+                                        <ul class="nested">
+                                            <li class="file">create-nft.ts</li>
+                                            <li class="file">list-nft.ts</li>
+                                            <li class="file">buy-nft.ts</li>
+                                        </ul>
+                                    </li>
+                                    <li class="file">package.json</li>
+                                    <li class="file">tsconfig.json</li>
+                                </ul>
+                            </li>
+                            <li><span class="caret">scripts/</span>
+                                <ul class="nested">
+                                    <li class="file">deploy.ts</li>
+                                    <li class="file">build-all.ts</li>
+                                    <li class="file">generate-idl.ts</li>
+                                    <li class="file">verify.ts</li>
+                                </ul>
+                            </li>
+                            <li><span class="caret">tests/</span>
+                                <ul class="nested">
+                                    <li class="file">marketplace.spec.ts</li>
+                                    <li class="file">token.spec.ts</li>
+                                </ul>
+                            </li>
+                            <li class="file">Anchor.toml</li>
+                            <li class="file">package.json</li>
+                            <li class="file">tsconfig.json</li>
+                            <li class="file">README.md</li>
+                        </ul>
+                    </li>
+                    <li class="file">docker-compose.yml</li>
+                    <li><span class="caret">.github/</span>
+                        <ul class="nested">
+                            <li><span class="caret">workflows/</span>
+                                <ul class="nested">
+                                    <li class="file">main.yml</li>
+                                    <li class="file">deploy.yml</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="file">.gitignore</li>
+                    <li class="file">package.json</li>
+                    <li class="file">README.md</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggler = document.getElementsByClassName("caret");
+            
+            // Expand the root level by default
+            document.querySelectorAll(".tree > ul > li > .caret").forEach(function(el) {
+                el.parentElement.querySelector(".nested").classList.add("active");
+                el.classList.add("caret-down");
+            });
+            
+            for (var i = 0; i < toggler.length; i++) {
+                toggler[i].addEventListener("click", function() {
+                    this.parentElement.querySelector(".nested").classList.toggle("active");
+                    this.classList.toggle("caret-down");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

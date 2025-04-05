@@ -1,0 +1,168 @@
+.
+|-- README.md
+|-- backend
+|   |-- Dockerfile
+|   |-- nest-cli.json
+|   |-- package.json
+|   |-- src
+|   |   |-- app.module.ts
+|   |   |-- blockchain
+|   |   |   |-- blockchain.controller.ts
+|   |   |   |-- blockchain.module.ts
+|   |   |   |-- blockchain.service.ts
+|   |   |   |-- dto
+|   |   |   |   |-- transaction.dto.ts
+|   |   |   |   `-- wallet.dto.ts
+|   |   |   `-- interfaces
+|   |   |       `-- transaction.interface.ts
+|   |   |-- common
+|   |   |   |-- decorators
+|   |   |   |   `-- wallet-address.decorator.ts
+|   |   |   |-- filters
+|   |   |   |   `-- blockchain-exception.filter.ts
+|   |   |   |-- guards
+|   |   |   |   `-- wallet-auth.guard.ts
+|   |   |   `-- interceptors
+|   |   |       `-- transaction.interceptor.ts
+|   |   |-- config
+|   |   |   |-- app.config.ts
+|   |   |   `-- blockchain.config.ts
+|   |   |-- ipfs
+|   |   |   |-- dto
+|   |   |   |   `-- ipfs.dto.ts
+|   |   |   |-- ipfs.controller.ts
+|   |   |   |-- ipfs.module.ts
+|   |   |   `-- ipfs.service.ts
+|   |   |-- main.ts
+|   |   |-- nfts
+|   |   |   |-- dto
+|   |   |   |   `-- nft.dto.ts
+|   |   |   |-- entities
+|   |   |   |   `-- nft.entity.ts
+|   |   |   `-- nfts.module.ts
+|   |   `-- users
+|   |       |-- dto
+|   |       |   `-- user.dto.ts
+|   |       |-- entities
+|   |       |   `-- user.entity.ts
+|   |       |-- users.controller.ts
+|   |       |-- users.module.ts
+|   |       `-- users.service.ts
+|   |-- test
+|   |   |-- app.e2e-spec.ts
+|   |   `-- jest-e2e.json
+|   `-- tsconfig.json
+|-- docker-compose.yml
+|-- frontend
+|   |-- Dockerfile
+|   |-- next.config.js
+|   |-- package.json
+|   |-- public
+|   |   |-- assets
+|   |   |   `-- images
+|   |   |       |-- hero.jpg
+|   |   |       |-- logo.png
+|   |   |       `-- placeholder.svg
+|   |   `-- favicon.ico
+|   |-- src
+|   |   |-- components
+|   |   |   |-- Button
+|   |   |   |   |-- Button.styles.ts
+|   |   |   |   |-- Button.tsx
+|   |   |   |   `-- index.ts
+|   |   |   |-- Card
+|   |   |   |   |-- Card.styles.ts
+|   |   |   |   |-- Card.tsx
+|   |   |   |   `-- index.ts
+|   |   |   |-- ConnectWallet
+|   |   |   |   |-- ConnectWallet.styles.ts
+|   |   |   |   |-- ConnectWallet.tsx
+|   |   |   |   |-- ConnectWalletButton.tsx
+|   |   |   |   `-- index.ts
+|   |   |   |-- NFTCard
+|   |   |   |   |-- NFTCard.styles.ts
+|   |   |   |   |-- NFTCard.tsx
+|   |   |   |   |-- NFTCardSkeleton.tsx
+|   |   |   |   `-- index.ts
+|   |   |   `-- Navbar
+|   |   |       |-- MobileMenu.tsx
+|   |   |       |-- Navbar.styles.ts
+|   |   |       |-- Navbar.tsx
+|   |   |       |-- NavbarLink.tsx
+|   |   |       `-- index.ts
+|   |   |-- config
+|   |   |   |-- contracts.ts
+|   |   |   `-- networks.ts
+|   |   |-- context
+|   |   |   `-- Web3Context.tsx
+|   |   |-- hooks
+|   |   |   |-- useContract.ts
+|   |   |   |-- useLocalStorage.ts
+|   |   |   |-- useWallet.ts
+|   |   |   `-- useWindowSize.ts
+|   |   |-- pages
+|   |   |   |-- _app.tsx
+|   |   |   |-- _document.tsx
+|   |   |   |-- index.tsx
+|   |   |   |-- nfts.tsx
+|   |   |   `-- profile.tsx
+|   |   |-- styles
+|   |   |   |-- global.ts
+|   |   |   `-- theme.ts
+|   |   |-- types
+|   |   |   `-- index.ts
+|   |   `-- utils
+|   |       |-- ethers.ts
+|   |       |-- helpers.ts
+|   |       `-- ipfs.ts
+|   `-- tsconfig.json
+|-- package.json
+|-- smart-contracts
+|   |-- Anchor.toml
+|   |-- README.md
+|   |-- app
+|   |   |-- examples
+|   |   |   `-- create-nft.ts
+|   |   |-- src
+|   |   |   |-- generated
+|   |   |   |-- models
+|   |   |   |   |-- marketplace.model.ts
+|   |   |   |   |-- nft.model.ts
+|   |   |   |   `-- user.model.ts
+|   |   |   |-- services
+|   |   |   |-- types
+|   |   |   `-- utils
+|   |   |       `-- connection.ts
+|   |   `-- tests
+|   |-- package.json
+|   |-- programs
+|   |   |-- nft-marketplace
+|   |   |   |-- Cargo.toml
+|   |   |   |-- Xargo.toml
+|   |   |   `-- src
+|   |   |       |-- error.rs
+|   |   |       |-- instructions
+|   |   |       |   |-- buy_nft.rs
+|   |   |       |   |-- create_nft.rs
+|   |   |       |   `-- list_nft.rs
+|   |   |       |-- lib.rs
+|   |   |       `-- state
+|   |   |           |-- marketplace.rs
+|   |   |           `-- nft.rs
+|   |   `-- token
+|   |       |-- Cargo.toml
+|   |       |-- Xargo.toml
+|   |       `-- src
+|   |           |-- burn.rs
+|   |           |-- lib.rs
+|   |           |-- mint.rs
+|   |           `-- transfer.rs
+|   |-- scripts
+|   |   |-- build-all.ts
+|   |   |-- deploy.ts
+|   |   `-- verify.ts
+|   |-- tests
+|   |   |-- marketplace.spec.ts
+|   |   `-- token.spec.ts
+|   `-- tsconfig.json
+`-- tsconfig.json
